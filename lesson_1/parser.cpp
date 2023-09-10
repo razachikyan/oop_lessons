@@ -38,7 +38,6 @@ int main() {
     CommandParser parser(input);
     CommandParser::Command cmd = parser.parseInput();
 
-    // Assuming some predefined commands
     if (cmd.name == "echo") {
         for (const std::string& arg : cmd.arguments) {
             std::cout << arg << " ";
