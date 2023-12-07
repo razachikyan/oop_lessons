@@ -5,11 +5,10 @@ class Controller {
 public:
     Controller() : isExit( false ) {};
 
-private:
+public:
+    void run();
     std::string getInput();
 
 private:
     bool isExit;
-public:
-    void run();
 };

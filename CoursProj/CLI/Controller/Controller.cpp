@@ -8,3 +8,7 @@ void Controller::run() {
         cmd->exec();
     }
 }
+
+std::string Controller::getInput() {
+    return "asd";
+}

@@ -5,7 +5,7 @@
 class Command
 {
 public:
-    Command(std::map<std::string,std::string> args);
-    virtual void exec();
+    Command(std::map<std::string,std::string> args) {};
+    virtual void exec() {};
 };
 

@@ -11,7 +11,5 @@ public:
 
 public:
     Command* parse(std::string input);
-
-private:
     std::vector<std::string> tokenize(std::string input);
 };

@@ -1,0 +1,54 @@
+main.cpp +
+    |
+Application
+    |-  +getController() +
+            |
+        CLI::Controller
+            |-  -getInput() -> String
+            |-  +run()                                      While( ! isExit ) { cmd = Parser.parse( getInput() ); cmd->exec() }
+                    |
+                CLI::Parser
+                    |-  +parse( String ) -> Command
+                    |-  -tokenize( String ) -> List of Strings
+                    |
+                    |-  CLI::Command
+                            |-  +Command( Args )                            Args = Map<String, String>
+                            |-  +virtual exec()
+                            |
+                            |-  AddCommand
+                                    |-  +AddCommand( Args )
+                                    |-  +exec() override
+                                DelCommand
+                                    |-  +DelCommand( Args )
+                                    |-  +exec() override
+                                    .
+                                    .
+                                    .
+                                    |
+                                CommandFactory
+                                    |-  +static create( Name, Args ) -> Command
+            |
+        Director
+            |-  +undo()
+            |-  +redo()
+            |-  +add( Action )
+            |
+            |-   Action
+                    |-  +exec()
+                    |-  -reset()
+            |
+        Document
+            |-  +addSlide( Slide )
+            |-  +delSlide( Id )
+            |-  +getSlides() -> List of Strings
+            |-  +getSlideById( Id ) -> Slide
+            |
+            |-  Slide
+                    |-  addItem( Item )
+                    |-  delItem( Id )
+                    |-  getItems() -> List of Items
+                    |-  getItemById( Id ) -> Item
+                    |
+                    |-  Item
+                          |
+                          ?
