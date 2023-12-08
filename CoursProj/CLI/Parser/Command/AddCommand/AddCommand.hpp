@@ -5,8 +5,8 @@
 class AddCommmand: public Command
 {
 public:
-    AddCommmand(std::map<std::string,std::string>) {};
+    AddCommmand(const Arguments& args): Command(args) {}
 
 public:
-    void exec();
+    void exec() override;
 };

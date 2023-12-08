@@ -1,9 +1,18 @@
 #pragma once
+#include <memory>
+
+#include "Controller.hpp"
+#include "../Document/Document.hpp"
 
 class Application {
 public:
-    Application() {};
+    std::shared_ptr<Document> getDocument();
 
-public:
-    void getController();
+    Controller& getController();
+
+private:
+    Application() {}
+
+    Application(const Application&) = delete;
+    Application& operator=(const Application&) = delete;
 };

@@ -2,14 +2,14 @@
 #include <any>
 #include <string>
 #include <vector>
-
-using Command = std::any;
+#include <sstream>
+#include "./Command/Command.hpp"
+#include "./Factory/CommandFactory.hpp"
 
 class Parser {
 public:
-    Parser() {};
+    Parser() = default;
 
 public:
     Command* parse(std::string input);
-    std::vector<std::string> tokenize(std::string input);
 };

@@ -3,8 +3,8 @@
 
 class DelCommand: public Command {
 public:
-    DelCommand(std::map<std::string, std::string>) {};
+    DelCommand(const Arguments& args):Command(args) {};
 
 public:
-    void exec();
+    void exec() override;
 };
